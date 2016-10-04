@@ -1,0 +1,115 @@
+body {
+    margin-top:2em
+}
+
+.centered {
+  position: fixed; /* or absolute */
+  top: 30%;
+  left: 18%;
+  font-size: 6em;
+}
+
+.form_width {
+     width:704px!important;
+}
+
+select {
+    width:180px;
+}
+
+.panel_header_bg {
+    background-color: rgb(120,20,200)!important;
+    color:white!important;
+}
+
+.box-background {
+    border-radius:9px;
+    width: 100%;
+    background: #FFF url(https://securemedia.newjobs.com/id/hiring/redux/global/rounded_corner/gradients/base_grad_to_white.png) bottom right no-repeat;
+}
+
+.box-top {
+    margin-bottom:15px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    padding:8px!important;
+    color:white!important;
+    font: bold 12px Arial, sans-serif!important;
+    top:8px!important;
+    background: transparent url(https://securemedia.newjobs.com/id/hiring/redux/global/rounded_corner/blue_cap_top.gif) repeat-x scroll left top;
+}
+
+.form_body_text {
+    font-size: 11px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input[type="text"], input[type="password"], input[type="email"], input[type="password"], select {
+    border: solid 1px #809db9;
+    height: 15px;
+    width: 157px;
+    font-family: Verdana, Arial, Sans-Serif;
+    font-size: 11px;
+}
+
+.form-group-new {
+    margin-bottom: 5px!important;
+}
+
+.form dt {
+    font-weight: bold;
+    width: 210px;
+    padding-right: 10px;
+    float: left;
+    clear: both;
+    text-align: right;
+}
+
+.divider-row {
+    margin: 20px 0px 10px 0px;
+    height: 1px;
+    background: transparent url(https://securemedia.newjobs.com/id/hiring/redux/global/divider.png) no-repeat scroll top right;
+}
+
+.required-span-div {
+    margin-right: 10px;
+    text-align: right;    font-size: 11px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.asterisk-red {
+    color:red;
+}
+
+a { text-decoration: underline; }
+
+.checkbox-under-form {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size:12px;
+}
+
+.checkbox-padding-left {
+    padding-left: 25px;
+}
+
+.cancel-button {
+        background: url(https://securemedia.newjobs.com/id/hiring/redux/global/buttons/btn.purple.sprite.png) repeat-x 0 -110px !important;
+        font-size: 14px;
+        border-radius:5px;
+        font-weight: bold;
+        padding-left: 12px;
+        padding-right: 12px;
+        height: 23px;
+        line-height: 1px;
+}
+
+.save-button {
+        background: url(https://securemedia.newjobs.com/id/hiring/redux/global/buttons/btn.green.sprite.png) repeat-x 0 -110px !important;
+        font-size: 14px;
+        border-radius:5px;
+        font-weight: bold;
+        padding-left: 12px;
+        padding-right: 12px;
+        height: 23px;
+        line-height: 1px;
+}
