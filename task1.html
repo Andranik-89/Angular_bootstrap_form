@@ -1,3 +1,191 @@
-import {Component} from '@angular/core';
-import {FormBuilder, Validators} from '@angular/forms';
-import {ControlGroup, Control} from 'angular2/common';
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.js"></script>
+<script type="text/javascript" src="task1.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<link rel="stylesheet" type="text/css" href="task1.css">
+</head>
+<body ng-app="Freelancer.main" ng-controller="mainCtrl">
+<div class="container-fluid">
+    <div class="row centered">
+        <div>
+            <div id="validation-div" ng-show="show_messages" class="row" ng-repeat="input in form_inputs">
+                <p ng-hide="form.{{input.input_name}}.$valid" style="color:red"> {{input.name}} is a required field</p>
+            </div>
+        </div>
+        <form id="account_form" name="form" class="form_width">
+            <div class="required-span-div">
+                <span><span class= "asterisk-red">*</span>= Required</span>
+            </div>
+            <div class="panel panel-default box-background">
+                <div class="panel-heading box-top">
+                    Account Information
+                </div>
+                <div class="panel-body form_body_text">
+                    <div class="row form-group-new">
+                        <label for="first_name" class="col-xs-4 col-form-label text-right">First name<span class= "asterisk-red"> *</span></label>
+                        <div class="col-xs-7">
+                            <input type="text" name="first_name" id="first_name" class=" " data-name="First name" ng-model="form_inputs[0].value" required>
+                        </div>
+                    </div>
+                    <div class="row form-group-new">
+                        <label for="last_name" class="col-xs-4 col-form-label text-right">Last name<span class= "asterisk-red"> *</span></label>
+                        <div class="col-xs-7">
+                            <input type="text" name="last_name" id="last_name" class=" " data-name="Last name" ng-model="form_inputs[1].value" required>
+                        </div>
+                    </div>
+                    <div class="row form-group-new">
+                        <label for="company_name" class="col-xs-4 col-form-label text-right">Company name<span class= "asterisk-red"> *</span></label>
+                        <div class="col-xs-7">
+                            <input type="text" name="company_name" id="company_name" class=" " data-name="Company name" ng-model="form_inputs[2].value" required>
+                        </div>
+                    </div>
+                    <div class="row form-group-new">
+                        <label for="company_address" class="col-xs-4 col-form-label text-right">Company address<span class= "asterisk-red"> *</span></label>
+                        <div class="col-xs-7">
+                            <input type="text" name="company_address" id="company_address" class=" " data-name="Company address" ng-model="form_inputs[3].value" required>
+                        </div>
+                    </div>
+                    <div class="row form-group-new">
+                        <label for="company_address2" class="col-xs-4 col-form-label text-right">Company address 2<span style="color: white">*</span></label>
+                        <div class="col-xs-7">
+                            <input type="text" name="company_address2" id="company_address2" class=" " ng-model="form_inputs[4].value" required>
+                        </div>
+                    </div>
+                    <div class="row form-group-new">
+                        <label for="city" class="col-xs-4 col-form-label text-right">City<span class= "asterisk-red"> *</span></label>
+                        <div class="col-xs-7">
+                            <input type="text" name="city" id="city" class=" " data-name="City" ng-model="form_inputs[5].value" required>
+                        </div>
+                    </div>
+                    <div class="row form-group-new">
+                        <label for="state" class="col-xs-4 col-form-label text-right">State<span class= "asterisk-red"> *</span></label>
+                        <div class="col-xs-7">
+                            <select name="state" class=" " data-name="State" ng-model="form_inputs[6].value" ng-options="state.StateName for state in states" required>
+                                <option value="" disabled>--Select--</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row form-group-new">
+                        <label for="zip_code" class="col-xs-4 col-form-label text-right">ZIP Code<span class= "asterisk-red"> *</span></label>
+                        <div class="col-xs-7">
+                            <input type="text" ng-model="form_inputs[7].value" name="zip_code" id="zip_code" class=" " data-name="ZIP Code" required>
+                        </div>
+                    </div>
+                    <div class="row form-group-new">
+                        <label for="country" class="col-xs-4 col-form-label text-right">Country<span class= "asterisk-red"> *</span></label>
+                        <div class="col-xs-7">
+                            <select name="country" class=" " data-name="Country" ng-model="form_inputs[8].value" ng-options="country.CountryName for country in countries" required>
+                                <option value="" disabled>--Select--</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row form-group-new">
+                        <label for="company_phone" class="col-xs-4 col-form-label text-right">Company phone<span class= "asterisk-red"> *</span></label>
+                        <div class="col-xs-7">
+                            <input type="text" name="company_phone" class=" " ng-model="form_inputs[9].value" id="company_phone" required pattern="[0-9]+" title="only numbers" data-name="Company phone">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default box-background">
+                <div class="panel-heading box-top">
+                    User Information
+                </div>
+                <div class="panel-body form_body_text">
+                    <div class="row form-group-new">
+                        <label for="username" class="col-xs-4 col-form-label text-right">Username<span class= "asterisk-red"> *</span></label>
+                        <div class="col-xs-7">
+                            <input type="text" name="username" ng-model="form_inputs[10].value" id="username" class=" " pattern="(?=.*\d)(?=.*[a-zA-Z]).{8,20}" title='8-20 characters, including at least 1 letter and 1 number or symbol. (Please exclude your first and last name, username, e-mail address and "Monster")' data-name="Username" required>
+                        </div>
+                    </div>
+                    <div class="row form-group-new">
+                        <label for="password" class="col-xs-4 col-form-label text-right">Password<span class= "asterisk-red"> *</span></label>
+                        <div class="col-xs-7">
+                            <input type="password" ng-model="form_inputs[11].value" name="password" id="password" class=" " pattern="(?=.*\d)(?=.*[a-zA-Z]).{8,20}" title='8-20 characters, including at least 1 letter and 1 number or symbol. (Please exclude your first and last name, username, e-mail address and "Monster")' data-name="Password" required>
+                        </div>
+                    </div>
+                    <div class="row form-group-new">
+                        <label for="password_confirm" class="col-xs-4 col-form-label text-right">Confirm password<span class= "asterisk-red"> *</span></label>
+                        <div class="col-xs-7">
+                            <input type="password" ng-model="form_inputs[12].value" name="password_confirm" id="password_confirm" class=" " pattern="(?=.*\d)(?=.*[a-zA-Z]).{8,20}" title='8-20 characters, including at least 1 letter and 1 number or symbol. (Please exclude your first and last name, username, e-mail address and "Monster")' data-name="Confirm password" required>
+                        </div>
+                    </div>
+                    <div class="row form-group-new">
+                        <label for="email" class="col-xs-4 col-form-label text-right">Email<span class= "asterisk-red"> *</span></label>
+                        <div class="col-xs-7">
+                            <input type="email" ng-model="form_inputs[13].value" name="email" id="email" class=" " pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="xyz@something.com" data-name="Email" required>
+                        </div>
+                    </div>
+                    <div class="row form-group-new">
+                        <label for="email_confirm" class="col-xs-4 col-form-label text-right">Confirm email<span class= "asterisk-red"> *</span></label>
+                        <div class="col-xs-7">
+                            <input type="email" ng-model="form_inputs[14].value" name="email_confirm" id="email_confirm" class=" " pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="xyz@something.com" data-name="Confirm email" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default box-background">
+                <div class="panel-heading box-top">
+                    Additional Company Information
+                </div>
+                <div class="panel-body form_body_text">
+                    <div class="row form-group-new">
+                        <label for="company_industry" class="col-xs-4 col-form-label text-right">Company Industry<span class= "asterisk-red"> *</span></label>
+                        <div class="col-xs-7">
+                            <select name="company_industry" ng-model="form_inputs[15].value" class=" " data-name="Company Industry" required>
+                                <option value="" selected="selected"> - SELECT - </option>
+                                <option value="smth1"> smth1 </option>
+                                <option value="smth2">smth2</option>
+                                <option value="smth3">smth3</option>
+                                <option value="smth4">smth4</option>
+                                <option value="smth5">smth5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row form-group-new">
+                        <label for="number_of_employees" class="col-xs-4 col-form-label text-right">Number of employees<span class= "asterisk-red"> *</span></label>
+                        <div class="col-xs-7">
+                            <select ng-model="form_inputs[16].value" name="number_of_employees" class=" " data-name="Number of employees" required>
+                                <option value="" selected="selected"> - SELECT - </option>
+                                <option value="smth1"> smth1 </option>
+                                <option value="smth2">smth2</option>
+                                <option value="smth3">smth3</option>
+                                <option value="smth4">smth4</option>
+                                <option value="smth5">smth5</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="checkbox checkbox-padding-left">
+                    <label class="checkbox-under-form"><input type="checkbox" value=""><span class="asterisk-red">*</span> I have read, and I accept, Monster's <a href="">Terms of Use</a> and <a href="">Privacy Policy</a>.</label>
+                </div>
+            </div>
+            <div class="divider-row"></div>
+
+                    <div class="row form-group-new">
+                        <div class="col-xs-7">
+                        </div>
+                        <div class="col-xs-5">
+                            <div class="pull-right">
+                                <!--input type="submit" name="Cancel" id="save_form_button" ng-click="cancel()"value="Cancel"-->
+                                <input class="btn btn-primary btn-xs cancel-button" type="submit" value="Cancel" name="Cancel" id="save_form_button" ng-click="cancel()">
+
+                                <!--input type="submit" name="Save and Continue" id="save_form_button" ng-click="showMessages(); save()" value="Save and continue"-->
+                                <input class="btn btn-primary btn-xs save-button" type="submit" name="Save and Continue" id="save_form_button" ng-click="showMessages(); save()" value="Save and continue">
+                            </div>
+                        </div>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
