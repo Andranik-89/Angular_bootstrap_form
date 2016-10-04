@@ -3,10 +3,9 @@ body {
 }
 
 .centered {
-  position: fixed; /* or absolute */
-  top: 30%;
-  left: 18%;
-  font-size: 6em;
+
+  margin: 0 auto;
+
 }
 
 .form_width {
