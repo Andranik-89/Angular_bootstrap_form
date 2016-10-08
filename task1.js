@@ -1,12 +1,7 @@
-// Copyright (c) 2016 Freelancer. All rights reserved.
 'use strict';
 
 angular.module('form_app', [])
 .controller('mainCtrl', ['$scope', '$http', function ($scope, $http) {
-
-//    $scope.test = function () {
-//       alert("This is only for test");
-//   }
     this.show_messages = false;
     $scope.showMessages = function () {
         this.show_messages = true;
@@ -38,22 +33,22 @@ angular.module('form_app', [])
 
     var allCountries = [{
             Id: 1,
-            CountryName: "USA"
+            CountryName: "Armenia"
         }, {
             Id: 2,
-            CountryName: "Australia"
+            CountryName: "Iran"
         }];
         var allStates = [{
             Id: 1,
-            StateName: "Washington",
+            StateName: "Kotayk",
             CountryId: 1
         }, {
             Id: 2,
-            StateName: "New York",
+            StateName: "Syunik",
             CountryId: 1
         }, {
             Id: 3,
-            StateName: "Queensland",
+            StateName: "Mazandaran",
             CountryId: 2
         }];
 
