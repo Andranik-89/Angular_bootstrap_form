@@ -14,7 +14,7 @@
     <div class="row centered">
         <div>
             <div id="validation-div" ng-show="show_messages" class="row" ng-repeat="input in form_inputs">
-                <p ng-hide="form.{{input.input_name}}.$valid" style="color:red"> {{input.name}} is a required field</p>
+                <p ng-hide="form.{{input.input_name}}.$valid" style="color:red"> {{input.input_name}} is a required field</p>
             </div>
         </div>
         <form id="account_form" name="form" class="form_width">
@@ -27,7 +27,7 @@
                 </div>
                 <div class="panel-body form_body_text">
                     <div class="row form-group-new">
-                        <label for="name" class="col-xs-4 col-form-label text-right">First name<span class= "asterisk-red"> *</span></label>
+                        <label for="name" class="col-xs-4 col-form-label text-right">Name<span class= "asterisk-red"> *</span></label>
                         <div class="col-xs-7">
                             <input type="text" name="name" id="name" class=" " data-name="Name" ng-model="form_inputs[0].value" required>
                         </div>
@@ -49,7 +49,7 @@
                         </div>
                     </div>
                     <div class="row form-group-new">
-                        <label for="phone" class="col-xs-4 col-form-label text-right">Company phone<span class= "asterisk-red"> *</span></label>
+                        <label for="phone" class="col-xs-4 col-form-label text-right">Phone<span class= "asterisk-red"> *</span></label>
                         <div class="col-xs-7">
                             <input type="text" name="phone" class=" " ng-model="form_inputs[3].value" id="phone" required pattern="[0-9]+" title="only numbers" data-name="phone">
                         </div>
