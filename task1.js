@@ -13,23 +13,13 @@ angular.module('Freelancer.main', [])
     };
 
     $scope.form_inputs = [
-    {input_name:"first_name", name:"First Name", value:""},
-    {input_name:"last_name", name:"Last Name", value:""},
-    {input_name:"company_name", name:"Company Name", value:""},
-    {input_name:"company_address", name:"Company address", value:""},
-    {input_name:"company_address2", name:"Company address 2", value:""},
-    {input_name:"city", name:"City", value:""},
+    {input_name:"name", name:"Name", value:""},
     {input_name:"state", name:"State", value:""},
-    {input_name:"zip_code", name:"Zip Code", value:""},
     {input_name:"country", name:"Country", value:""},
     {input_name:"company_phone", name:"Company phone", value:""},
     {input_name:"username", name:"Username", value:""},
     {input_name:"password", name:"Password", value:""},
-    {input_name:"password_confirm", name:"Confirm password", value:""},
     {input_name:"email", name:"Email", value:""},
-    {input_name:"email_confirm", name:"Confirm email", value:""},
-    {input_name:"company_industry", name:"Company Industry", value:""},
-    {input_name:"number_of_employees", name:"Number of employees", value:""},
     ];
 
     $scope.cancel = function() {
