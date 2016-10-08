@@ -9,7 +9,7 @@
 
 <link rel="stylesheet" type="text/css" href="task1.css">
 </head>
-<body ng-app="Freelancer.main" ng-controller="mainCtrl">
+<body ng-app="form_app" ng-controller="mainCtrl">
 <div class="container-fluid">
     <div class="row centered">
         <div>
@@ -49,9 +49,9 @@
                         </div>
                     </div>
                     <div class="row form-group-new">
-                        <label for="company_phone" class="col-xs-4 col-form-label text-right">Company phone<span class= "asterisk-red"> *</span></label>
+                        <label for="phone" class="col-xs-4 col-form-label text-right">Company phone<span class= "asterisk-red"> *</span></label>
                         <div class="col-xs-7">
-                            <input type="text" name="company_phone" class=" " ng-model="form_inputs[3].value" id="company_phone" required pattern="[0-9]+" title="only numbers" data-name="Company phone">
+                            <input type="text" name="phone" class=" " ng-model="form_inputs[3].value" id="phone" required pattern="[0-9]+" title="only numbers" data-name="phone">
                         </div>
                     </div>
                 </div>
@@ -85,7 +85,7 @@
 
             <div>
                 <div class="checkbox checkbox-padding-left">
-                    <label class="checkbox-under-form"><input type="checkbox" value=""><span class="asterisk-red">*</span> I have read, and I accept, Monster's <a href="">Terms of Use</a> and <a href="">Privacy Policy</a>.</label>
+                    <label class="checkbox-under-form"><input type="checkbox" value=""><span class="asterisk-red">*</span> I have read the <a href="">Terms of Use</a> and <a href="">Privacy Policy</a>.</label>
                 </div>
             </div>
             <div class="divider-row"></div>
@@ -99,7 +99,7 @@
                                 <input class="btn btn-primary btn-xs cancel-button" type="submit" value="Cancel" name="Cancel" id="save_form_button" ng-click="cancel()">
 
                                 <!--input type="submit" name="Save and Continue" id="save_form_button" ng-click="showMessages(); save()" value="Save and continue"-->
-                                <input class="btn btn-primary btn-xs save-button" type="submit" name="Save and Continue" id="save_form_button" ng-click="showMessages(); save()" value="Save and continue">
+                                <input class="btn btn-primary btn-xs save-button" type="submit" name="Save" id="save_form_button" ng-click="showMessages(); save()" value="Save">
                             </div>
                         </div>
             </div>
