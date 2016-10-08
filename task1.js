@@ -1,7 +1,7 @@
 // Copyright (c) 2016 Freelancer. All rights reserved.
 'use strict';
 
-angular.module('Freelancer.main', [])
+angular.module('form_app', [])
 .controller('mainCtrl', ['$scope', '$http', function ($scope, $http) {
 
 //    $scope.test = function () {
@@ -16,7 +16,7 @@ angular.module('Freelancer.main', [])
     {input_name:"name", name:"Name", value:""},
     {input_name:"state", name:"State", value:""},
     {input_name:"country", name:"Country", value:""},
-    {input_name:"company_phone", name:"Company phone", value:""},
+    {input_name:"phone", name:"Phone", value:""},
     {input_name:"username", name:"Username", value:""},
     {input_name:"password", name:"Password", value:""},
     {input_name:"email", name:"Email", value:""},
